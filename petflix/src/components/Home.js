@@ -1,7 +1,8 @@
 // src/components/Home.js
 import React, { useEffect, useState } from 'react';
 import { fetchPetVideos } from '../api';
-import VideoCard from './VideoCard';
+import VideoRow from './VideoRow';
+import './Home.css'; // Estilos adicionais para a Home
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
@@ -26,13 +27,13 @@ const Home = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
+  // Organize os vídeos em uma única "row" para este exemplo
+  const videoRows = [{ title: 'Popular Pet Videos', videos }];
+
   return (
-    <div>
-      {videos.map((video) => (
-        <VideoCard
-          key={video.id}
-          video={{ title: video.user.name, src: video.video_files[0].link }}
-        />
+    <div className="app">
+      {videoRows.map((row, index) => (
+        <VideoRow key={index} title={row.title} videos={row.videos} />
       ))}
     </div>
   );
