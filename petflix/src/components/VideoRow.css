@@ -1,0 +1,23 @@
+/* src/components/VideoRow.css */
+.video-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .video-row h2 {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .video-row .video-row__list {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  
+  .video-row .video-row__list::-webkit-scrollbar {
+    display: none;
+  }
+  
