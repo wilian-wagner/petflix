@@ -1,14 +1,15 @@
 // src/components/VideoCard.js
 import React from 'react';
+import './VideoCard.css'; // Adicione estilos específicos se necessário
 
 const VideoCard = ({ video }) => {
   return (
-    <div>
-      <h2>{video.title}</h2>
-      <video width="300" controls>
+    <div className="video-card">
+      <video width="200" height="150" controls>
         <source src={video.src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <p>{video.title}</p>
     </div>
   );
 };
