@@ -1,18 +1,38 @@
 // src/components/Home.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchPetVideos } from '../api';
 import VideoCard from './VideoCard';
 
 const Home = () => {
-  // Simula uma lista de vídeos
-  const videos = [
-    { id: 1, title: 'Video 1', src: '/assets/video1.mp4' },
-    { id: 2, title: 'Video 2', src: '/assets/video2.mp4' },
-  ];
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadVideos = async () => {
+      try {
+        const videoData = await fetchPetVideos();
+        setVideos(videoData);
+      } catch (err) {
+        setError('Failed to fetch videos');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadVideos();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div>
-      {videos.map(video => (
-        <VideoCard key={video.id} video={video} />
+      {videos.map((video) => (
+        <VideoCard
+          key={video.id}
+          video={{ title: video.user.name, src: video.video_files[0].link }}
+        />
       ))}
     </div>
   );
