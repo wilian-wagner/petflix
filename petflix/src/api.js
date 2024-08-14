@@ -14,9 +14,10 @@ export const fetchPetVideos = async () => {
         per_page: 20, // Increase number of videos per request to 20
       },
     });
+    console.log('Resposta da API:', response.data);
     return response.data.videos;
   } catch (error) {
     console.error('Error fetching videos:', error);
     throw error;
   }
-};
+}
