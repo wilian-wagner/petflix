@@ -9,8 +9,9 @@ const VideoRow = ({ title, videos }) => {
       <h2>{title}</h2>
       <div className="video-row__list">
         {videos.map(video => (
-          <VideoCard key={video.id} video={video} />
-        ))}
+          <VideoCard key={video.id} video={{ title: video.user.name, src: video.video_files[0].link }} />
+
+))}
       </div>
     </div>
   );
