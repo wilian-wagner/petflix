@@ -1,23 +1,18 @@
-/* src/components/VideoRow.css */
 .video-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .video-row h2 {
-    margin: 0;
-    padding-left: 20px;
-  }
-  
-  .video-row .video-row__list {
-    display: flex;
-    overflow-x: scroll;
-    padding: 10px 0;
-    gap: 10px;
-  }
-  
-  .video-row .video-row__list::-webkit-scrollbar {
-    display: none;
-  }
-  
+  margin-bottom: 40px; /* Espaçamento entre as rows */
+}
+
+.video-row__divider {
+  border: none;
+  border-top: 2px solid #333; /* Cor e espessura da linha */
+  margin: 20px 0; /* Espaçamento acima e abaixo da linha */
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.video-row__list {
+  display: flex;
+  flex-wrap: nowrap; /* Garante que os vídeos fiquem em uma única linha */
+  overflow-x: auto;
+  padding: 10px 0; /* Adiciona padding apenas na vertical */
+  scroll-behavior: smooth;
+}
