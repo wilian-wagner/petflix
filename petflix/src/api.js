@@ -1,4 +1,3 @@
-// src/api.js
 import axios from 'axios';
 
 const API_KEY = 'Ua31Uyr0M9WkVjwBNfTf7GTcIQC1rMbDXSBQeJnVT3IoXzfPFs9bPNYp'; 
@@ -12,7 +11,7 @@ export const fetchPetVideos = async () => {
       },
       params: {
         query: 'pets',
-        per_page: 10, // Número de vídeos por página
+        per_page: 20, // Increase number of videos per request to 20
       },
     });
     console.log('Resposta da API:', response.data);
