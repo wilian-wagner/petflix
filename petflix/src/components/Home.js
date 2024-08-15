@@ -31,11 +31,13 @@ const Home = () => {
   const videoRows = [{ title: 'Popular Pet Videos', videos }];
 
   return (
+
     <div className="app">
       {videoRows.map((row, index) => (
         <VideoRow key={index} title={row.title} videos={row.videos} />
       ))}
     </div>
+
   );
 };
 
