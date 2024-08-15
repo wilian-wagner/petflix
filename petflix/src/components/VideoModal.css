@@ -1,0 +1,51 @@
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .video-modal__content {
+    background: #000;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+  }
+  
+  .video-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .video-modal__video {
+    width: 100%;
+    height: auto;
+  }
+  
+  .video-modal__description {
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .video-modal__description h3 {
+    margin: 0;
+  }
+  
